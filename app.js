@@ -9,8 +9,6 @@ const app = express();
 //Middlewares
 app.use(morgan('dev'));
 
-
-
 app.use(express.json())
 
 app.use((req,res,next)=>{
@@ -102,6 +100,37 @@ const deleteTour = (req, res) => {
     })
 }
 
+const getALlUsers=(req,res) =>{
+    res.status(500).json({
+        status:'error',
+        message:'this route is not yet defined'
+    })
+}
+const getUser=(req,res) =>{
+    res.status(500).json({
+        status:'error',
+        message:'this route is not yet defined'
+    })
+}
+const createUser=(req,res) =>{
+    res.status(500).json({
+        status:'error',
+        message:'this route is not yet defined'
+    })
+}
+const updateUser=(req,res) =>{
+    res.status(500).json({
+        status:'error',
+        message:'this route is not yet defined'
+    })
+}
+const deleteUser=(req,res) =>{
+    res.status(500).json({
+        status:'error',
+        message:'this route is not yet defined'
+    })
+}
+
 //ROutes
 
 // app.get('/api/v1/tours',getAllTours);
@@ -120,6 +149,17 @@ app
     .get(getTour)
     .patch(updateTour)
     .delete(deleteTour);
+
+app
+    .route('/api/v1/users')
+    .get(getALlUsers)
+    .post(createUser)
+
+app 
+    .route('/api/v1/users:id')
+    .get(getUser)
+    .patch(updateUser)
+    .delete(deleteUser)
 
 //Server
 
