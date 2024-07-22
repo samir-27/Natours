@@ -16,23 +16,6 @@ mongoose
   })
   .then(() => console.log('DB connection successful'));
 
-const tourSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    require: [true, 'A Tour Must Have a Name'],
-    unique: true
-  },
-  rating: {
-    type: Number,
-    default: 4.5
-  },
-  Price: {
-    type: Number,
-    require: [true, 'A Tour Must Have a Price']
-  }
-});
-
-const Tour = mongoose.model('Tour', tourSchema);
 
 // Start the server
 app.listen(PORT, () => {
