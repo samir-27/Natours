@@ -6,7 +6,10 @@ dotenv.config({ path: './.env' });
 
 const PORT = 3000;
 
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
 
 // Connect to MongoDB
 mongoose
@@ -15,7 +18,6 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => console.log('DB connection successful'));
-
 
 // Start the server
 app.listen(PORT, () => {
